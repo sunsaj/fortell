@@ -25,8 +25,8 @@ const Result = (props) => {
             
             <h1>{props.label}</h1>
 
-            <div className="w3-light-grey">
-            <div ref={barRef} id="myBar" className="w3-container w3-green" style={{width:"0%"}}><h2>0%</h2></div>
+            <div className="w3-light-parent">
+            <div ref={barRef} id="myBar" className="w3-container w3-child" style={{width:"0%"}}><h2>0%</h2></div>
             </div>
 
         </div>
