@@ -121,3 +121,31 @@ nav > h1 > .nav-title {
   flex-direction: column;
   align-items: center;
 }
+
+.result-content > h1{
+  margin: 30px auto;
+}
+
+.w3-light-grey{
+  height: 30px;
+  width: 100%;
+  color:#000;
+  background-color:#d69c664b;
+  border-radius: 25px;
+}
+
+
+.w3-container{
+  padding:0.01em 16px
+}
+
+.w3-green{
+  height: 30px;
+  color:#fff;
+  background-color: #d69d66 ;
+  border-radius: 25px;
+}
+
+.w3-container > h2{
+  text-align: center;
+}

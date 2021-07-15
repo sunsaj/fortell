@@ -1,20 +1,33 @@
-import { PieChart } from 'react-minimal-pie-chart';
+import { useEffect, useRef } from "react";
 
-const Result = () => {
+const Result = (props) => {
+
+    const barRef = useRef();
+
+    useEffect(()=>{
+        let elem = barRef.current;
+        let width = 0;
+        let id = setInterval(frame, 20);
+        function frame() {
+            if (width >= props.conf) {
+            clearInterval(id);
+            } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = '<h2>'+width * 1  + '% </h2>';
+            }
+        }
+    })
+
+
     return ( 
         <div className="result-content">
-            <h1>Result</h1>
             
-            <PieChart
-            className = "pie-chart"
-            radius = {50}
-            lineWidth = {60}
-            data={[
-                { title: 'One', value: 10, color: '#E38627' },
-                { title: 'Two', value: 15, color: '#C13C37' },
-                { title: 'Three', value: 20, color: '#6A2135' },
-            ]}
-            />;
+            <h1>{props.label}</h1>
+
+            <div className="w3-light-grey">
+            <div ref={barRef} id="myBar" className="w3-container w3-green" style={{width:"0%"}}><h2>0%</h2></div>
+            </div>
 
         </div>
      );

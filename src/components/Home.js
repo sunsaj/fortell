@@ -13,7 +13,7 @@ const Home = () => {
         setTimeout(()=>{
             setInProgress(false);
             setResult(true);
-        }, 5000)
+        }, 2000)
     }
 
     return ( 
@@ -25,7 +25,7 @@ const Home = () => {
                 {!inProgress && <input className="search-button"  type="submit" value="Predict" />}
                 {inProgress && <div className='loader'></div>}
             </form>
-            {result && <Result />}
+            {result && <Result label={"Class A"} conf={91} />}
             
         </div>
      );
